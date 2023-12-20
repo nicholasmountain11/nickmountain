@@ -1,0 +1,25 @@
+mat-list-item {
+    height: 64px !important;
+    line-height: 64px !important;
+}
+
+mat-list-item a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    padding: 0 15px
+  }
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav {
+    width: 200px;
+}
+
+mat-nav-list,
+mat-list-item {
+  margin: 0;
+  padding: 0;
+}
