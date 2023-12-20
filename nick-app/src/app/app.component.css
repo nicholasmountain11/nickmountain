@@ -1,4 +1,9 @@
 mat-list-item {
+    height: 50px !important;
+    line-height: 50px !important;
+}
+
+.home-button {
     height: 64px !important;
     line-height: 64px !important;
 }
