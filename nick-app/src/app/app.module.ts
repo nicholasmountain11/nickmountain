@@ -11,6 +11,7 @@ import { MatListModule } from '@angular/material/list';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ClassesComponent } from './classes/classes.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ClassesComponent } from './classes/classes.component';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
+    MatCardModule
   ],
   bootstrap: [AppComponent]
 })
