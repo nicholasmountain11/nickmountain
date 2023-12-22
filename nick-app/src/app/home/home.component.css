@@ -6,9 +6,3 @@ mat-card {
 mat-card p {
     font-size: 15px;
 }
-
-.link {
-    background-color: #9C27B0;
-    color: black;
-    text-decoration: none;
-}
