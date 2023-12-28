@@ -8,13 +8,6 @@ mat-list-item {
     line-height: 64px !important;
 }
 
-mat-list-item a {
-    display: flex;
-    color: white;
-    text-decoration: none;
-    padding: 0 15px
-  }
-
 mat-sidenav-container {
     height: 100%;
 }
