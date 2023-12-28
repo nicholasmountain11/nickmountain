@@ -1,0 +1,21 @@
+<mat-card class="project-card">
+    <mat-card-header>
+        <mat-card-title class="title">
+            {{ project.name }}
+        </mat-card-title>
+        <mat-card-subtitle class="subtitle">
+            {{ project.projectType }}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ project.image }}" alt="Project Image">
+    <mat-card-content>
+        <p>
+            {{ project.description }}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-button href="{{ project.link }}" target="_blank" class="button-link">
+            VIEW
+        </a>
+    </mat-card-actions>
+</mat-card>

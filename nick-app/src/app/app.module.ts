@@ -12,6 +12,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ClassesComponent } from './classes/classes.component';
 import {MatCardModule} from '@angular/material/card';
+import { ProjectWidget } from './widgets/project.widget';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {MatCardModule} from '@angular/material/card';
     HomeComponent,
     AboutMeComponent,
     ProjectsComponent,
-    ClassesComponent
+    ClassesComponent,
+    ProjectWidget
   ],
   imports: [
     BrowserModule,
