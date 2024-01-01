@@ -4,8 +4,11 @@ mat-list-item {
 }
 
 .home-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 64px !important;
-    line-height: 64px !important;
+    text-align: center;
 }
 
 mat-sidenav-container {
@@ -20,4 +23,10 @@ mat-nav-list,
 mat-list-item {
   margin: 0;
   padding: 0;
+}
+
+.logo {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
 }
