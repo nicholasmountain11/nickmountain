@@ -7,5 +7,4 @@ export interface Project {
     projectType: string;
     description: string;
     link: string;
-    image: string;
 }

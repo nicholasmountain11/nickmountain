@@ -15,11 +15,23 @@
 }
 
 .right-image {
-    width:  500px;
+    width:  625px;
     height: auto;
     object-fit: contain;
 }
 
+.right-image-two {
+    width:  625px;
+    height: auto;
+    object-fit: contain;
+    margin-top: 5px;
+}
+
 .project-widget {
     margin: 5px; /* adjust this value as needed */
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
 }
