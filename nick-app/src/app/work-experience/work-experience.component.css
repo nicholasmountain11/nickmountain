@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+}
+
+mat-card {
+    margin: 15px;
+}
+
+.cards {
+    margin: 15px;
+}
+
+.container img {
+    margin: 15px;
+    width: 400px; /* adjust this value as needed */
+}
