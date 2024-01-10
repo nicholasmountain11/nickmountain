@@ -40,10 +40,10 @@ export class ProjectsComponent {
         link: 'https://github.com/nicholasmountain11/weather'
       },
       {
-        name: 'nickmountain.com (this website!)',
+        name: 'This Website!',
         projectType: 'Personal Project',
         description: 'Personal website built with Angular for me to experiment with web development and show off things that I have done and learned.',
-        link: 'https://github.com/nicholasmountain11/web-nick'
+        link: 'https://github.com/nicholasmountain11/nicholasmountain/'
       }
     ]
 }
