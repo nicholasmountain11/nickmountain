@@ -13,7 +13,7 @@ export class ProjectsComponent {
         name: 'CSXL Equipment Checkout',
         projectType: 'Class Project',
         description: 'Full stack web application using Angular, FastAPI, and SQLAlchemy for the CSXL Equipment Checkout system.',
-        link: 'https://github.com/comp423-23f/csxl-final-team-d9',
+        link: 'https://github.com/nicholasmountain11/csxl-final-team-d9',
       },
       {
         name: 'Spotify Retro Playlist Generator',
