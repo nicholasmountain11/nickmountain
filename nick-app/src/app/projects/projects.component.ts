@@ -43,7 +43,7 @@ export class ProjectsComponent {
         name: 'This Website!',
         projectType: 'Personal Project',
         description: 'Personal website built with Angular for me to experiment with web development and show off things that I have done and learned.',
-        link: 'https://github.com/nicholasmountain11/nicholasmountain/'
+        link: 'https://github.com/nicholasmountain11/nickmountain/'
       }
     ]
 }
