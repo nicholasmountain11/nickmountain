@@ -25,16 +25,10 @@
     </mat-card-header>
     <br>
     <mat-card-content>
-        <p>
-            I am in the process of building a CustomGPT chatbot that will be trained to talk like me. 
-            My hope is that I can integrate it into this website so that you can have a conversation with it.
-            As of 12/21/23 (the day I am writing this), OpenAI has not built an API for CustomGPT's, but presumably
-            they will in the future.
-        </p>
-        <p>
-            I am also thinking of moving my <a class="link" href="https://www.instagram.com/darwin_nunswift/" target="_blank">Darwin Nunez/Taylor Swift Instagram bot</a>
-            to this website as an interactive page.
-        </p>
+        <div *ngFor="let employee of employees">
+            name: {{ employee.name }}
+            role: {{ employee.role }}
+        </div>
     </mat-card-content>
 </mat-card>
 

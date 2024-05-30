@@ -11,7 +11,11 @@ export class AppService {
   private urlStr: string;
 
   constructor(private http: HttpClient) { 
-    this.urlStr = "'http://localhost:8080/employees"
+    this.urlStr = "http://localhost:8080/employees"
+  }
+
+  public getEmployees(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.urlStr)
   }
 
   

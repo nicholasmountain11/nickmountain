@@ -14,6 +14,7 @@ import { ClassesComponent } from './classes/classes.component';
 import {MatCardModule} from '@angular/material/card';
 import { ProjectWidget } from './widgets/project.widget';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { WorkExperienceComponent } from './work-experience/work-experience.compo
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })
