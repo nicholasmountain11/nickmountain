@@ -15,6 +15,7 @@ import {MatCardModule} from '@angular/material/card';
 import { ProjectWidget } from './widgets/project.widget';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WiiGolfComponent } from './wii-golf/wii-golf.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProjectsComponent,
     ClassesComponent,
     ProjectWidget,
-    WorkExperienceComponent
+    WorkExperienceComponent,
+    WiiGolfComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ClassesComponent } from './classes/classes.component';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
+import { WiiGolfComponent } from './wii-golf/wii-golf.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'projects', component: ProjectsComponent},
   { path: 'classes', component: ClassesComponent},
   { path: 'work-experience', component: WorkExperienceComponent},
+  { path: 'wii-golf', component: WiiGolfComponent}
 ];
 
 @NgModule({
