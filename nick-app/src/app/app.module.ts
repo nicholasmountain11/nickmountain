@@ -16,6 +16,7 @@ import { ProjectWidget } from './widgets/project.widget';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WiiGolfComponent } from './wii-golf/wii-golf.component';
+import { PlayerWidget } from './widgets/player.widget';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { WiiGolfComponent } from './wii-golf/wii-golf.component';
     ClassesComponent,
     ProjectWidget,
     WorkExperienceComponent,
-    WiiGolfComponent
+    WiiGolfComponent,
+    PlayerWidget
   ],
   imports: [
     BrowserModule,

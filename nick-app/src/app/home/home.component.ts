@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../models/employee.model';
 import { AppService } from '../app.service';
+import { Player } from '../models/player.model';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +10,13 @@ import { AppService } from '../app.service';
 })
 export class HomeComponent implements OnInit {
 
-  employees!: Employee[];
+  players!: Player[];
 
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-      this.appService.getEmployees().subscribe(data => {
-        this.employees = data;
+      this.appService.getPlayers().subscribe(data => {
+        this.players = data;
       });
   }
 
