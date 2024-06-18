@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Project } from "../project.model";
+import { Project } from "../../project.model";
 
 @Component({
     selector: 'project-widget',

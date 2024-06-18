@@ -3,6 +3,7 @@ import { Employee } from './models/employee.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Player } from './models/player.model';
+import { Round } from './models/round.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,10 @@ export class AppService {
 
   public getPlayers(): Observable<Player[]> {
     return this.http.get<Player[]>(`${this.urlStr}/player`)
+ }
+
+ public getRounds(): Observable<Round[]> {
+  return this.http.get<Round[]>(`${this.urlStr}/rounds`)
  }
   
 }
