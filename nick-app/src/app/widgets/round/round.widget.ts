@@ -12,6 +12,7 @@ export class RoundWidget {
   /** Inputs and outputs go here */
 
   @Input() round!: Round;
+  @Input() holes!: Hole[];
 
   /** Constructor */
   constructor() { }

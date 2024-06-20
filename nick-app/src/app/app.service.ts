@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Player } from './models/player.model';
 import { Round } from './models/round.model';
+import { Hole } from './models/hole.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class AppService {
 
  public getRounds(): Observable<Round[]> {
   return this.http.get<Round[]>(`${this.urlStr}/rounds`)
+ }
+
+ public getHolesByRound(roundId: number): Observable<Hole[]> {
+  return this.http.get<Hole[]>(`${this.urlStr}/getHolesByRound/${roundId}`)
  }
   
 }
