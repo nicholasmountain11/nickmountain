@@ -4,6 +4,6 @@
             <mat-panel-title>{{ player.name }}</mat-panel-title>
             <mat-panel-description>Rating: {{ player.rating }}</mat-panel-description>
         </mat-expansion-panel-header>
-        <p>rounds table will go here</p>
+        <round-widget class="round-widget" [round]="round" *ngFor="let round of player.rounds"/>
     </mat-expansion-panel>
 </mat-accordion>

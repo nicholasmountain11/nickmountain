@@ -20,6 +20,7 @@ import { ProjectWidget } from './widgets/project/project.widget';
 import { RoundWidget } from './widgets/round/round.widget';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatExpansionModule} from '@angular/material/expansion'; 
+import {MatTableModule} from '@angular/material/table'; 
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     WorkExperienceComponent,
     WiiGolfComponent,
     PlayerWidget,
-    RoundWidget
+    RoundWidget,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +46,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatCardModule,
     HttpClientModule,
     MatTabsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule
   ],
   bootstrap: [AppComponent]
 })

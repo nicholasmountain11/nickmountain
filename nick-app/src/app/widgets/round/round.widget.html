@@ -1,8 +1,26 @@
-<mat-card>
-    <!-- <mat-card-content>
-        round player: {{ round.player.name }}
-        <div *ngFor="let hole of holes">
-            hole {{ hole.hole_number }}: {{ hole.shots }}
-        </div>
-    </mat-card-content> -->
-</mat-card>
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Round Score: {{ score >= 0 ? '+' + score : score }}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <table mat-table [dataSource]="transposedHoles" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="label">
+              <th mat-header-cell *matHeaderCellDef>Label</th>
+              <td mat-cell *matCellDef="let element"> {{element.label}} </td>
+            </ng-container>
+          
+            <ng-container *ngFor="let idx of holeIndices; let i = index" [matColumnDef]="idx">
+              <th mat-header-cell *matHeaderCellDef> {{ i + 1 }} </th>
+              <td mat-cell *matCellDef="let element"> {{ element.values[i] }} </td>
+            </ng-container>
+          
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-expansion-panel>
+</mat-accordion>
+
+
+  
