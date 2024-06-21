@@ -1,0 +1,20 @@
+<div>
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <mat-card-header>
+                Add New Player
+            </mat-card-header>
+        </mat-card-header>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="center">
+                <label for="name">Name</label>
+                <input id="name" type="text" formControlName="name">
+            </div>
+            <div class="center">
+                <label for="rating">Rating</label>
+                <input id="rating" type="text" formControlName="rating">
+            </div>
+            <button class="submit" [disabled]="!registerForm.valid">Submit</button>
+        </form>
+    </mat-card>
+</div>

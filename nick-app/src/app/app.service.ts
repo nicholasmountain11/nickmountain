@@ -32,5 +32,10 @@ export class AppService {
  public getHolesByRound(roundId: number): Observable<Hole[]> {
   return this.http.get<Hole[]>(`${this.urlStr}/getHolesByRound/${roundId}`)
  }
+
+ public registerPlayer(player: Player) {
+  console.log('registerPlayer called')
+  return this.http.post<Player>(`${this.urlStr}/player`, player);
+ }
   
 }
