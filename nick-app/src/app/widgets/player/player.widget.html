@@ -1,10 +1,9 @@
-<mat-card class="player-card">
-    <mat-card-header>
-        <mat-card-title class="name">
-            {{ player.name }}
-        </mat-card-title>
-        <mat-card-subtitle class="rating">
-            rating: {{ player.rating }}
-        </mat-card-subtitle>
-    </mat-card-header>
-</mat-card>
+<mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>{{ player.name }}</mat-panel-title>
+            <mat-panel-description>Rating: {{ player.rating }}</mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>rounds table will go here</p>
+    </mat-expansion-panel>
+</mat-accordion>

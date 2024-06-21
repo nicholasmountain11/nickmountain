@@ -18,6 +18,8 @@ import { WiiGolfComponent } from './wii-golf/wii-golf.component';
 import { PlayerWidget } from './widgets/player/player.widget';
 import { ProjectWidget } from './widgets/project/project.widget';
 import { RoundWidget } from './widgets/round/round.widget';
+import { MatTabsModule } from '@angular/material/tabs';
+import {MatExpansionModule} from '@angular/material/expansion'; 
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { RoundWidget } from './widgets/round/round.widget';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule,
+    MatExpansionModule
   ],
   bootstrap: [AppComponent]
 })

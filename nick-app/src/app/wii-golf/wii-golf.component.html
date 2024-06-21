@@ -1,8 +1,8 @@
-<div class="players-container">
-    <div class="player-list">
+<mat-tab-group>
+    <mat-tab label="Players">
         <player-widget class="player-widget" [player]="player" *ngFor="let player of players"/>
-    </div>
-    <!-- <div class="round-list">
-        <round-widget class="'round-widget" [round]="round" [holes]="holes" *ngFor="let round of rounds"/>
-    </div> -->
-</div>
+    </mat-tab>
+    <mat-tab label="Top Rounds">
+        top rounds
+    </mat-tab>
+</mat-tab-group>
