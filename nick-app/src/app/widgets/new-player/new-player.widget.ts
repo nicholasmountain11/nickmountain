@@ -11,21 +11,26 @@ import { AppService } from "../../app.service";
 })
 export class NewPlayerWidget {
 
+    @Output() registerPlayer = new EventEmitter<Player>();
+
     registerForm = this.fb.group({
         name: ['', Validators.required],
         rating: ['', [Validators.required, Validators.pattern('^[0-9]*$')]]
     })
 
+
     constructor(
-        private appService: AppService,
         private fb: FormBuilder,
     ) { }
 
     onSubmit() {
-        this.appService.registerPlayer({
+        this.registerPlayer.emit({
             name: this.registerForm.value.name!,
             rating: +this.registerForm.value.rating!,
-        }).subscribe();
+        })
+
+        this.registerForm.reset()
+
         window.alert('Hello?')
     }
 

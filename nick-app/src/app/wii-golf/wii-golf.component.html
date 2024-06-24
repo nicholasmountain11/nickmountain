@@ -1,9 +1,11 @@
 <mat-tab-group>
     <mat-tab label="Players">
-        <player-widget class="player-widget" [player]="player" *ngFor="let player of players"/>
+        <player-widget class="player-widget" [player]="player" *ngFor="let player of players$"/>
     </mat-tab>
     <mat-tab label="New Player">
-        <new-player-widget class="new-player-widget"/>
+        <new-player-widget 
+            class="new-player-widget"
+            (registerPlayer)="registerPlayer($event)" />
     </mat-tab>
     <mat-tab label="Top Rounds">
         top rounds

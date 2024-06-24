@@ -34,7 +34,6 @@ export class AppService {
  }
 
  public registerPlayer(player: Player) {
-  console.log('registerPlayer called')
   return this.http.post<Player>(`${this.urlStr}/player`, player);
  }
   
