@@ -23,6 +23,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table'; 
 import { NewPlayerWidget } from './widgets/new-player/new-player.widget';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NewRoundWidget } from './widgets/new-round/new-round.widget';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatIconModule} from '@angular/material/icon'; 
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     WiiGolfComponent,
     PlayerWidget,
     RoundWidget,
-    NewPlayerWidget
+    NewPlayerWidget,
+    NewRoundWidget,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatTabsModule,
     MatExpansionModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatIconModule
   ],
   bootstrap: [AppComponent]
 })

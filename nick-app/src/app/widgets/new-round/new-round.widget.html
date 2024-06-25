@@ -1,0 +1,28 @@
+<h3>Add Holes:</h3>
+<div class="add-holes-form" [formGroup]="form">
+    <ng-container formArrayName="holes">
+        <ng-container *ngFor="let holeForm of holes.controls; let i = index">
+            <div class="hole-form-row" [formGroup]="getHoleFormGroup(i)">
+                <mat-form-field appearance="fill">
+                    <input matInput
+                           formControlName="hole_number">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <input matInput
+                           formControlName="par">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <input matInput
+                           formControlName="shots">
+                </mat-form-field>
+                <mat-icon class="delete-btn" (click)="deleteHole(i)">
+                    delete_forever</mat-icon>
+            </div>
+        </ng-container>
+    </ng-container>
+  
+    <button mat-mini-fab (click)="addHole()">
+        <mat-icon class="add-hole-btn">add</mat-icon>
+    </button>
+
+</div>
