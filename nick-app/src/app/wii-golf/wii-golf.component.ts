@@ -29,8 +29,8 @@ export class WiiGolfComponent {
 
   refreshPlayers() {
     this.appService
-    .getPlayers()
-    .subscribe((players) => (this.players$ = players));
+      .getPlayers()
+      .subscribe((players) => (this.players$ = players));
   }
 
   registerPlayer(player: Player) {

@@ -6,7 +6,9 @@
         <new-player-widget 
             class="new-player-widget"
             (registerPlayer)="registerPlayer($event)" />
-        <new-round-widget />
+        <new-round-widget 
+            class="new-round-widget"
+            [players$] = players$ />
     </mat-tab>
     <mat-tab label="Top Rounds">
         top rounds

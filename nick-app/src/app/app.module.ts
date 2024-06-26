@@ -26,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NewRoundWidget } from './widgets/new-round/new-round.widget';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatIconModule} from '@angular/material/icon'; 
+import {MatSelectModule} from '@angular/material/select'; 
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatTableModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ],
   bootstrap: [AppComponent]
 })

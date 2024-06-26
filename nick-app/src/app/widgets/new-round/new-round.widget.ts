@@ -12,9 +12,11 @@ import { AddRound } from "../../models/add-round.model";
 })
 export class NewRoundWidget {
 
+    @Input() players$: Player[] | undefined;
     @Output() addRound = new EventEmitter<AddRound>(); 
 
     form = this.fb.group({
+        player: ['', Validators.required],
         holes: this.fb.array([])
     })
 
