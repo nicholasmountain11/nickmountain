@@ -24,7 +24,10 @@
         </mat-card-content>
         <br>
 
-        <mat-card-content formArrayName="holes">
+        <mat-card-content 
+            *ngIf="player_selected;
+                   else noPlayerSelected"   
+            formArrayName="holes">
             <ng-container *ngFor="let holeForm of holes.controls; let i = index">
                 <div [formGroup]="getHoleFormGroup(i)">
                     <div class="field-container">
@@ -57,11 +60,22 @@
                 </div>
                 <br>
             </ng-container>
+            <button 
+                class="center"
+                mat-stroked-button
+                color="secondary" 
+                (click)="addHole()">
+                Add hole
+            </button>
         </mat-card-content>
+
+        <ng-template #noPlayerSelected>
+            <mat-card-content class="center">
+                Select a player to add holes
+            </mat-card-content>
+        </ng-template>
       
-        <button mat-mini-fab (click)="addHole()">
-            <mat-icon class="add-hole-btn">add</mat-icon>
-        </button>
+        
     
     </mat-card>
 </div>

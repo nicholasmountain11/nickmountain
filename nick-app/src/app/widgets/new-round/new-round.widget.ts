@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Player } from "../../models/player.model";
 import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Round } from "../../models/round.model";
@@ -10,10 +10,12 @@ import { AddRound } from "../../models/add-round.model";
     templateUrl: './new-round.widget.html',
     styleUrls: ['./new-round.widget.css']
 })
-export class NewRoundWidget {
+export class NewRoundWidget implements OnInit{
 
     @Input() players$: Player[] | undefined;
     @Output() addRound = new EventEmitter<AddRound>(); 
+
+    player_selected: boolean = false;
 
     form = this.fb.group({
         player: ['', Validators.required],
@@ -23,6 +25,12 @@ export class NewRoundWidget {
     constructor(
         private fb: FormBuilder,
     ) { }
+
+    ngOnInit() {
+        this.form.get('player')?.valueChanges.subscribe(value => {
+            this.player_selected = !!value;
+        });
+    }
 
     get holes() {
         return this.form.controls["holes"] as FormArray;
