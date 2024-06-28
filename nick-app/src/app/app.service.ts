@@ -26,10 +26,6 @@ export class AppService {
     return this.http.get<Player[]>(`${this.urlStr}/player`)
  }
 
- public getRounds(): Observable<Round[]> {
-  return this.http.get<Round[]>(`${this.urlStr}/rounds`)
- }
-
  public getHolesByRound(roundId: number): Observable<Hole[]> {
   return this.http.get<Hole[]>(`${this.urlStr}/getHolesByRound/${roundId}`)
  }

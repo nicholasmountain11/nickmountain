@@ -15,17 +15,12 @@ import { AddRound } from '../models/add-round.model';
 export class WiiGolfComponent {
 
   players$: Player[] | undefined;
-  rounds$: Round[] | undefined;
 
 
   constructor(private appService: AppService) {
     appService
       .getPlayers()
       .subscribe((players) => this.players$ = players);
-
-    appService
-      .getRounds()
-      .subscribe((rounds) => this.rounds$ = rounds);
    }
 
   refreshPlayers() {
