@@ -14,31 +14,37 @@ export class RoundWidget implements OnInit {
 
   @Input() round!: Round;
 
+  inOrderHoles!: Hole[];
   transposedHoles!: TransposedHole[];
   holeIndices!: string[];
   displayedColumns!: string[];
   score: number = 0;
 
   ngOnInit() {
+    this.sortHoles()
     this.transposeHoles()
-    this.holeIndices = this.round.holes.map((_, index) => `${index + 1}`);
+    this.holeIndices = this.inOrderHoles.map((_, index) => `${index + 1}`);
     this.displayedColumns = ['label', ...this.holeIndices];
     this.setScore();
+  }
+
+  sortHoles() {
+    this.inOrderHoles = this.round.holes.sort((a, b) => a.hole_number - b.hole_number)
   }
 
   transposeHoles() {
     this.transposedHoles = [
       {
         label: 'Hole',
-        values: this.round.holes.map(hole => hole.hole_number)
+        values: this.inOrderHoles.map(hole => hole.hole_number)
       },
       {
         label: 'Par',
-        values: this.round.holes.map(hole => hole.par)
+        values: this.inOrderHoles.map(hole => hole.par)
       },
       {
         label: 'Score',
-        values: this.round.holes.map(hole => hole.shots)
+        values: this.inOrderHoles.map(hole => hole.shots)
       }
     ]
   }

@@ -9,10 +9,7 @@ import { Player } from "../../models/player.model";
 })
 export class PlayerWidget {
 
-  /** Inputs and outputs go here */
-
   @Input() player!: Player;
 
-  /** Constructor */
   constructor() { }
 }
