@@ -5,6 +5,7 @@ import { Round } from '../models/round.model';
 import { Observable } from 'rxjs';
 import { PlayerWidget } from '../widgets/player/player.widget';
 import { RoundWidget } from '../widgets/round/round.widget';
+import { AddRound } from '../models/add-round.model';
 
 @Component({
   selector: 'app-wii-golf',
@@ -39,6 +40,14 @@ export class WiiGolfComponent {
         this.refreshPlayers();
       }
     });
+  }
+
+  addRound(round: AddRound) {
+    this.appService.addRound(round).subscribe({
+      next: () => {
+        console.log('successfully called addRound from wii-golf component');
+      }
+    })
   }
 
 

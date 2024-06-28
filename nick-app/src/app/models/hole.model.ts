@@ -4,5 +4,5 @@ export interface Hole {
     par:         number;
     shots:       number;
     hole_number: number;
-    id:          number;
+    id?:          number;
 }

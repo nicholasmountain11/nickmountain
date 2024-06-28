@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Player } from './models/player.model';
 import { Round } from './models/round.model';
 import { Hole } from './models/hole.model';
+import { AddRound } from './models/add-round.model';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,10 @@ export class AppService {
 
  public registerPlayer(player: Player) {
   return this.http.post<Player>(`${this.urlStr}/player`, player);
+ }
+
+ public addRound(round: AddRound) {
+  return this.http.post<Hole[]>(`${this.urlStr}/addRoundByPlayer/${round.player_id}`, round.holes);
  }
   
 }

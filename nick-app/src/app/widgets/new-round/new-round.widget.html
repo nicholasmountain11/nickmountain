@@ -13,7 +13,7 @@
                     <div class="center">
                         <mat-select formControlName="player"
                                     placeholder="Player Name">
-                                <mat-option [value]="player"
+                                <mat-option [value]="player.id"
                                             *ngFor="let player of players$">
                                             {{ player.name }}
                                 </mat-option>
@@ -66,6 +66,13 @@
                 color="secondary" 
                 (click)="addHole()">
                 Add hole
+            </button>
+            <button 
+                class="center"
+                mat-stroked-button
+                color="secondary"
+                (click)="addRoundFromForm()">
+                Submit Round
             </button>
         </mat-card-content>
 

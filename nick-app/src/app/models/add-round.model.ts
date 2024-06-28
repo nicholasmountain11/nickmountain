@@ -1,6 +1,8 @@
+import { Hole } from "./hole.model";
+import { Player } from "./player.model";
 import { Round } from "./round.model";
 
 export interface AddRound {
-    round: Round;
+    holes: Hole[];
     player_id: number;
 }

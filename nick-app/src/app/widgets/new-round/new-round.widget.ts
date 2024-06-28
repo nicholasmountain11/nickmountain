@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Player } from "../../models/player.model";
 import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Round } from "../../models/round.model";
+import { Hole } from "../../models/hole.model";
 import { AddRound } from "../../models/add-round.model";
 
 
@@ -52,6 +52,23 @@ export class NewRoundWidget implements OnInit{
 
     deleteHole(holeIndex: number) {
         this.holes.removeAt(holeIndex);
+    }
+
+    addRoundFromForm() {
+
+        let hole_list: Hole[] = []
+        this.holes.getRawValue().map((hole) => {
+            hole_list.push({
+                hole_number: hole.hole_number,
+                par: hole.par,
+                shots: hole.shots,
+            });
+        })
+
+        this.addRound.emit({
+            holes: hole_list,
+            player_id: +this.form.value.player!,
+        })
     }
 
 
