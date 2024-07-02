@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { PlayerWidget } from '../widgets/player/player.widget';
 import { RoundWidget } from '../widgets/round/round.widget';
 import { AddRound } from '../models/add-round.model';
+import { TopRoundReturnModel } from '../models/top-round-return.model';
 
 @Component({
   selector: 'app-wii-golf',
@@ -16,17 +17,29 @@ export class WiiGolfComponent {
 
   players$: Player[] | undefined;
 
+  top_rounds$: TopRoundReturnModel[] | undefined;
+
 
   constructor(private appService: AppService) {
     appService
       .getPlayers()
       .subscribe((players) => this.players$ = players);
-   }
+
+    appService
+      .getTopRounds(10)
+      .subscribe((rounds) => this.top_rounds$ = rounds);
+  }
 
   refreshPlayers() {
     this.appService
       .getPlayers()
       .subscribe((players) => (this.players$ = players));
+  }
+
+  refreshTopRounds() {
+    this.appService
+      .getTopRounds(10)
+      .subscribe((rounds) => this.top_rounds$ = rounds);
   }
 
   registerPlayer(player: Player) {
@@ -40,10 +53,12 @@ export class WiiGolfComponent {
   addRound(round: AddRound) {
     this.appService.addRound(round).subscribe({
       next: () => {
-        console.log('successfully called addRound from wii-golf component');
+        this.refreshPlayers();
+        this.refreshTopRounds();
       }
     })
   }
+
 
 
 }
