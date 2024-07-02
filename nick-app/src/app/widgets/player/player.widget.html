@@ -1,0 +1,11 @@
+<div class="player-card">
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>{{ player.name }}</mat-panel-title>
+                <mat-panel-description>Rating: {{ player.rating }}</mat-panel-description>
+            </mat-expansion-panel-header>
+            <round-widget class="round-widget" [round]="round" *ngFor="let round of player.rounds"/>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

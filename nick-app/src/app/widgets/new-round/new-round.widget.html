@@ -1,0 +1,88 @@
+<div>
+    <mat-card class="add-holes-form" [formGroup]="form">
+        <mat-card-header>
+            <mat-card-subtitle>
+                Add New Round
+            </mat-card-subtitle>
+        </mat-card-header>
+        <br>
+
+        <mat-card-content>
+            <form [formGroup]="form">
+                <div class="field-container">
+                    <div class="center">
+                        <mat-select formControlName="player"
+                                    placeholder="Player Name">
+                                <mat-option [value]="player.id"
+                                            *ngFor="let player of players$">
+                                            {{ player.name }}
+                                </mat-option>
+                        </mat-select>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+        <br>
+
+        <mat-card-content 
+            *ngIf="player_selected;
+                   else noPlayerSelected"   
+            formArrayName="holes">
+            <ng-container *ngFor="let holeForm of holes.controls; let i = index">
+                <div [formGroup]="getHoleFormGroup(i)">
+                    <div class="field-container">
+
+                        <div class="center">
+                            <label for="hole_number">Hole Number</label>
+                            <input matInput
+                                    id="hole_number"
+                                    type="text"
+                                   formControlName="hole_number">
+                        </div>
+                        <div class="center" appearance="fill">
+                            <label for="par">Par</label>
+                            <input matInput
+                                    id="par"
+                                    type="text"
+                                   formControlName="par">
+                        </div>
+                        <div class="center" appearance="fill">
+                            <label for="shots">Shots</label>
+                            <input matInput
+                                    id="shots"
+                                    type="text"
+                                   formControlName="shots">
+                        </div>
+                        <mat-icon class="center" (click)="deleteHole(i)">
+                            delete_forever</mat-icon>
+                    </div>
+                  
+                </div>
+                <br>
+            </ng-container>
+            <button 
+                class="center"
+                mat-stroked-button
+                color="secondary" 
+                (click)="addHole()">
+                Add hole
+            </button>
+            <button 
+                class="center"
+                mat-stroked-button
+                color="secondary"
+                (click)="addRoundFromForm()">
+                Submit Round
+            </button>
+        </mat-card-content>
+
+        <ng-template #noPlayerSelected>
+            <mat-card-content class="center">
+                Select a player to add holes
+            </mat-card-content>
+        </ng-template>
+      
+        
+    
+    </mat-card>
+</div>
