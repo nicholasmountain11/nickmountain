@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Player } from "../../models/player.model";
 import { FormBuilder, Validators } from "@angular/forms";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 
 @Component({
@@ -20,6 +21,7 @@ export class NewPlayerWidget {
 
     constructor(
         private fb: FormBuilder,
+        protected snackbar: MatSnackBar
     ) { }
 
     onSubmit() {
@@ -28,9 +30,15 @@ export class NewPlayerWidget {
             rating: +this.registerForm.value.rating!,
         })
 
+        let name: string = this.registerForm.value.name!;
+
         this.registerForm.reset()
 
-        window.alert('Hello?')
+        this.snackbar.open(
+            `New player ${name} added`,
+            '',
+            { duration: 4000 }
+        );
     }
 
 }

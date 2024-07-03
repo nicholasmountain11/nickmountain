@@ -3,6 +3,8 @@ import { Player } from "../../models/player.model";
 import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Hole } from "../../models/hole.model";
 import { AddRound } from "../../models/add-round.model";
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 
 @Component({
@@ -10,10 +12,10 @@ import { AddRound } from "../../models/add-round.model";
     templateUrl: './new-round.widget.html',
     styleUrls: ['./new-round.widget.css']
 })
-export class NewRoundWidget implements OnInit{
+export class NewRoundWidget implements OnInit {
 
     @Input() players$: Player[] | undefined;
-    @Output() addRound = new EventEmitter<AddRound>(); 
+    @Output() addRound = new EventEmitter<AddRound>();
 
     player_selected: boolean = false;
 
@@ -24,6 +26,7 @@ export class NewRoundWidget implements OnInit{
 
     constructor(
         private fb: FormBuilder,
+        protected snackbar: MatSnackBar
     ) { }
 
     ngOnInit() {
@@ -44,7 +47,7 @@ export class NewRoundWidget implements OnInit{
         const holeForm = this.fb.group({
             hole_number: ['', Validators.required],
             par: ['', Validators.required],
-            shots:['', Validators.required],
+            shots: ['', Validators.required],
         });
 
         this.holes.push(holeForm);
@@ -69,6 +72,14 @@ export class NewRoundWidget implements OnInit{
             holes: hole_list,
             player_id: +this.form.value.player!,
         })
+
+        this.form.reset()
+
+        this.snackbar.open(
+            'New round added',
+            '',
+            { duration: 4000 }
+        );
     }
 
 
