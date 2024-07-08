@@ -9,12 +9,12 @@ import { AppService } from '../app.service';
 })
 export class HomeComponent {
 
-  players$: Player[] | undefined;
+
 
   constructor(private appService: AppService) {
-    appService
-      .getPlayers()
-      .subscribe((players) => this.players$ = players);
+    // appService
+    //   .getPlayers()
+    //   .subscribe((players) => this.players$ = players);
   }
 
 }
