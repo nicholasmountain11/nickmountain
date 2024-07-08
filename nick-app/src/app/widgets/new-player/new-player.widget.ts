@@ -15,7 +15,6 @@ export class NewPlayerWidget {
 
     registerForm = this.fb.group({
         name: ['', Validators.required],
-        rating: ['', [Validators.required, Validators.pattern('^[0-9]*$')]]
     })
 
 
@@ -27,7 +26,6 @@ export class NewPlayerWidget {
     onSubmit() {
         this.registerPlayer.emit({
             name: this.registerForm.value.name!,
-            rating: +this.registerForm.value.rating!,
         })
 
         let name: string = this.registerForm.value.name!;

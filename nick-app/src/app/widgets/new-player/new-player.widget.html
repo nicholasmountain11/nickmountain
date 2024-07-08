@@ -14,21 +14,13 @@
                         <label for="name">Name</label>
                         <input id="name" type="text" formControlName="name">
                     </div>
-                    <div class="center">
-                        <label for="rating">Rating</label>
-                        <input id="rating" type="text" formControlName="rating">
-                    </div>
-                    <button 
-                        class="center"
-                        mat-stroked-button
-                        color="secondary" 
-                        [disabled]="!registerForm.valid">
+                    <button class="center" mat-stroked-button color="secondary" [disabled]="!registerForm.valid">
                         Submit
                     </button>
                 </div>
-                
+
             </form>
         </mat-card-content>
-        
+
     </mat-card>
 </div>
