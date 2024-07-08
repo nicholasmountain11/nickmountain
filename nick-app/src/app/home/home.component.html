@@ -5,17 +5,18 @@
     <br>
     <mat-card-content>
         <p>
-            The purpose of this website is to provide a way for me to experiment with 
+            The purpose of this website is to provide a way for me to experiment with
             Angular and to showcase some things that I have made and learned.
         </p>
         <p>
-            If you are interested in the source code for this website, you can find it on my 
+            If you are interested in the source code for this website, you can find it on my
             <a class="link" href="https://github.com/nicholasmountain11/web-nick" target="_blank">GitHub</a>.
             (Feel free to give me a follow while you're there!)
         </p>
         <p>
-            If you are not interested in the source code, please enjoy these 
-            <a class="link" href="https://youtu.be/9VQMePrbp6U?si=najUVogeLsenR1BA" target="_blank">Roberto Firmino highlights</a>.
+            If you are not interested in the source code, please enjoy these
+            <a class="link" href="https://youtu.be/9VQMePrbp6U?si=najUVogeLsenR1BA" target="_blank">Roberto Firmino
+                highlights</a>.
         </p>
     </mat-card-content>
 </mat-card>
@@ -24,17 +25,7 @@
         <mat-card-subtitle>Ideas for the future</mat-card-subtitle>
     </mat-card-header>
     <br>
-    <mat-card-content>
-        <p>
-            I am in the process of building a CustomGPT chatbot that will be trained to talk like me. 
-            My hope is that I can integrate it into this website so that you can have a conversation with it.
-            As of 12/21/23 (the day I am writing this), OpenAI has not built an API for CustomGPT's, but presumably
-            they will in the future.
-        </p>
-        <p>
-            I am also thinking of moving my <a class="link" href="https://www.instagram.com/darwin_nunswift/" target="_blank">Darwin Nunez/Taylor Swift Instagram bot</a>
-            to this website as an interactive page.
-        </p>
+    <mat-card-content *ngFor="let player of players$">
+        <p>{{ player.name }}</p>
     </mat-card-content>
 </mat-card>
-

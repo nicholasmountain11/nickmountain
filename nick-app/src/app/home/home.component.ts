@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Player } from '../model/player.model';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+
+  players$: Player[] | undefined;
+
+  constructor(private appService: AppService) {
+    appService
+      .getPlayers()
+      .subscribe((players) => this.players$ = players);
+  }
 
 }
