@@ -11,7 +11,7 @@ export class AppService {
   private urlStr: string;
 
   constructor(private http: HttpClient) {
-    this.urlStr = "http://localhost:8080"
+    this.urlStr = "https://wii-golf-service.yellowbush-f41b9f35.eastus.azurecontainerapps.io/"
   }
 
   public getPlayers(): Observable<Player[]> {
