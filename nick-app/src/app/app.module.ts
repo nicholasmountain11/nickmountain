@@ -6,14 +6,28 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ClassesComponent } from './classes/classes.component';
-import {MatCardModule} from '@angular/material/card';
-import { ProjectWidget } from './widgets/project.widget';
+import { MatCardModule } from '@angular/material/card';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
+import { HttpClientModule } from '@angular/common/http';
+import { WiiGolfComponent } from './wii-golf/wii-golf.component';
+import { PlayerWidget } from './widgets/player/player.widget';
+import { ProjectWidget } from './widgets/project/project.widget';
+import { RoundWidget } from './widgets/round/round.widget';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material/table';
+import { NewPlayerWidget } from './widgets/new-player/new-player.widget';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NewRoundWidget } from './widgets/new-round/new-round.widget';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { RoundWithNameWidget } from './widgets/round-with-name/round-with-name.widget';
 
 @NgModule({
   declarations: [
@@ -23,7 +37,13 @@ import { WorkExperienceComponent } from './work-experience/work-experience.compo
     ProjectsComponent,
     ClassesComponent,
     ProjectWidget,
-    WorkExperienceComponent
+    WorkExperienceComponent,
+    WiiGolfComponent,
+    PlayerWidget,
+    RoundWidget,
+    NewPlayerWidget,
+    NewRoundWidget,
+    RoundWithNameWidget,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +53,15 @@ import { WorkExperienceComponent } from './work-experience/work-experience.compo
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatTableModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatSelectModule
   ],
   bootstrap: [AppComponent]
 })
