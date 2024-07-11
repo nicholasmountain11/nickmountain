@@ -1,8 +1,7 @@
 import { Round } from "./round.model";
 
 export interface Player {
-    name:   string;
-    rating: number;
-    id?:     number;
+    name: string;
+    id?: number;
     rounds?: Round[];
 }
