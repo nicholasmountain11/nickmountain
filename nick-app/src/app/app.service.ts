@@ -22,10 +22,19 @@ export class AppService {
  * GET a list of all Players in the database
  * @returns Observable<Player[]>
  */
+  /**
+ * GET a list of all Players in the database
+ * @returns Observable<Player[]>
+ */
   public getPlayers(): Observable<Player[]> {
     return this.http.get<Player[]>(`${this.urlStr}/player`)
   }
 
+  /**
+   * return a list of all the Holes for a given Round
+   * @param roundId The ID of the Round being requested
+   * @returns Observable<Hole[]>
+   */
   /**
    * return a list of all the Holes for a given Round
    * @param roundId The ID of the Round being requested
@@ -40,6 +49,11 @@ export class AppService {
    * @param player The Player to be added to the database
    * @returns the Player that was added
    */
+  /**
+   * add a Player to the database
+   * @param player The Player to be added to the database
+   * @returns the Player that was added
+   */
   public registerPlayer(player: Player) {
     return this.http.post<Player>(`${this.urlStr}/player`, player);
   }
@@ -49,10 +63,20 @@ export class AppService {
    * @param round AddRound object containing the Round to be added and the ID of the player to add the Round to
    * @returns the Round that was added to the database
    */
+  /**
+   * Add a Round to a given Player
+   * @param round AddRound object containing the Round to be added and the ID of the player to add the Round to
+   * @returns the Round that was added to the database
+   */
   public addRound(round: AddRound) {
     return this.http.post<Hole[]>(`${this.urlStr}/addRoundByPlayer/${round.player_id}`, round.holes);
   }
 
+  /**
+   * GETs the $$roundAmount$$ lowest scoring Rounds in the database
+   * @param roundAmount The number of Rounds to GET
+   * @returns Observable<TopRoundReturnModel[]>
+   */
   /**
    * GETs the $$roundAmount$$ lowest scoring Rounds in the database
    * @param roundAmount The number of Rounds to GET
