@@ -2,7 +2,11 @@
 <html>
 
 <head>
-    <meta http-equiv="refresh" content="0; URL='./index.html'" />
+    <script type="text/javascript">
+        // Extract the path from the current URL and append it to the base URL
+        var path = window.location.pathname.replace('/nickmountain', '');
+        window.location.replace('/nickmountain' + '/index.html' + '#' + path);
+    </script>
 </head>
 
 <body>
