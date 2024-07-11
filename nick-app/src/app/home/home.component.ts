@@ -8,16 +8,8 @@ import { Player } from '../models/player.model';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  players!: Player[];
-
-  constructor(private appService: AppService) { }
-
-  ngOnInit() {
-      this.appService.getPlayers().subscribe(data => {
-        this.players = data;
-      });
-  }
+  constructor() { }
 
 }
