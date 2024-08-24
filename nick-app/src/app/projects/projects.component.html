@@ -1,10 +1,19 @@
+<mat-form-field>
+    <mat-chip-listbox selectable multiple>
+        <mat-chip *ngFor="let tech of technologyTypes" (click)="toggleSelection(tech)">
+            <mat-icon *ngIf="selectedTechTypes.has(tech)">check</mat-icon>
+            {{ tech }}
+        </mat-chip>
+    </mat-chip-listbox>
+</mat-form-field>
+
+
 <div class="project-container">
     <div class="project-list">
-        <project-widget class="project-widget" [project]="project" *ngFor="let project of projects"/>
+        <project-widget class="project-widget" [project]="project" *ngFor="let project of projects" />
     </div>
     <div class="image-container">
         <img class="right-image" src="assets/hackNCpicture.jpeg" alt="HackNC 2023">
         <img class="right-image-two" src="assets/thoughtful-nick.jpg" alt="Thoughtful Nick">
     </div>
 </div>
-
