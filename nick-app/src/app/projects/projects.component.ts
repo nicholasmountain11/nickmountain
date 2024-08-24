@@ -55,6 +55,7 @@ export class ProjectsComponent {
 
   technologyTypes: string[];
   selectedTechTypes: Set<string> = new Set<string>;
+  filteredProjects: Project[];
 
   constructor() {
     let techCount: { [type: string]: number } = {};
@@ -68,13 +69,32 @@ export class ProjectsComponent {
       })
     })
     this.technologyTypes = Object.entries(techCount).sort((a, b) => b[1] - a[1]).map(tech => tech[0]);
+    this.filteredProjects = this.projects.slice();
   }
 
   toggleSelection(tech: string) {
-    if (tech in this.selectedTechTypes) {
+
+    // returns true if set1 is a subset of set2
+    let isSubset = (set1: Set<string>, set2: Set<string>) => {
+      for (let element of set1) {
+        if (!set2.has(element)) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    if (this.selectedTechTypes.has(tech)) {
       this.selectedTechTypes.delete(tech)
     } else {
       this.selectedTechTypes.add(tech)
+    }
+    if (this.selectedTechTypes.size == 0) {
+      this.filteredProjects = this.projects.slice()
+    } else {
+      this.filteredProjects = this.projects.filter((project) =>
+        isSubset(this.selectedTechTypes, project.technologies)
+      )
     }
   }
 
