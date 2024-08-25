@@ -10,47 +10,61 @@ export class ProjectsComponent {
 
   public projects: Project[] = [
     {
+      name: 'Record App',
+      projectType: 'Team Project',
+      description: "Social media app for music reviews. Built with Dart and Supabase, by Ben Mountain, Rob Windslow, and myself. I specifically am working on the likes and comments features.",
+      link: 'https://github.com/benjaminmountain/record',
+      technologies: new Set<string>(['Dart', 'Mobile', 'SQL'])
+    },
+    {
+      name: 'Wii Golf Database',
+      projectType: 'Personal Project',
+      description: "Keeps track of Wii Golf scores. Includes the Wii Golf tab of this website (built with Angular), and a Java Spring Boot REST API to interact with a MySQL database.",
+      link: 'https://github.com/nicholasmountain11/wii-golf-api',
+      technologies: new Set<string>(['Java', 'Spring Boot', 'SQL', 'REST API', 'TypeScript', 'Angular', 'WebDev'])
+    },
+    {
       name: 'CSXL Equipment Checkout',
       projectType: 'Class Project',
       description: 'Full stack web application using Angular, FastAPI, and SQLAlchemy for the CSXL Equipment Checkout system.',
       link: 'https://github.com/nicholasmountain11/csxl-final-team-d9',
-      technologies: new Set<string>(['python', 'typescript', 'restapi'])
+      technologies: new Set<string>(['Python', 'TypeScript', 'REST API', 'SQL', 'Angular', 'WebDev'])
     },
     {
       name: 'Spotify Retro Playlist Generator',
       projectType: 'Carolina Data Challenge 2023',
       description: 'Uses Python to access the Spotify web API to get data about the most popular songs of the 2000s and create an Ultimate 2000s playlist.',
       link: 'https://github.com/nicholasmountain11/spotify',
-      technologies: new Set<string>(['python', 'webapi'])
-    },
-    {
-      name: 'Dear Darwin Instagram Bot',
-      projectType: 'Personal Project',
-      description: 'Instagram bot that uses Python to choose a random Taylor Swift lyric and make it about Darwin Nunez.',
-      link: 'https://github.com/nicholasmountain11/nunez_instagram',
-      technologies: new Set<string>(['python'])
-    },
-    {
-      name: 'Farming Simulator Clicker App',
-      projectType: 'HackNC 2023',
-      description: 'Clicking based farming simulator app built with Swift.',
-      link: 'https://github.com/nicholasmountain11/farm-simulator',
-      technologies: new Set<string>(['swift', 'mobile'])
-    },
-    {
-      name: 'Command Line Meteorologist',
-      projectType: 'Personal Project',
-      description: 'Python script that uses web scraping to describe the weather in a city of your choice.',
-      link: 'https://github.com/nicholasmountain11/weather',
-      technologies: new Set<string>(['python', 'webscraping'])
+      technologies: new Set<string>(['Python', 'Web API'])
     },
     {
       name: 'This Website!',
       projectType: 'Personal Project',
       description: 'Personal website built with Angular for me to experiment with web development and show off things that I have done and learned.',
       link: 'https://github.com/nicholasmountain11/nickmountain/',
-      technologies: new Set<string>(['typescript', 'angular', 'webdev'])
-    }
+      technologies: new Set<string>(['TypeScript', 'Angular', 'WebDev'])
+    },
+    {
+      name: 'Dear Darwin Instagram Bot',
+      projectType: 'Personal Project',
+      description: 'Instagram bot that uses Python to choose a random Taylor Swift lyric and make it about Darwin Nunez.',
+      link: 'https://github.com/nicholasmountain11/nunez_instagram',
+      technologies: new Set<string>(['Python'])
+    },
+    {
+      name: 'Farming Simulator Clicker App',
+      projectType: 'HackNC 2023',
+      description: 'Clicking based farming simulator app built with Swift.',
+      link: 'https://github.com/nicholasmountain11/farm-simulator',
+      technologies: new Set<string>(['Swift', 'Mobile'])
+    },
+    {
+      name: 'Command Line Meteorologist',
+      projectType: 'Personal Project',
+      description: 'Python script that uses web scraping to describe the weather in a city of your choice.',
+      link: 'https://github.com/nicholasmountain11/weather',
+      technologies: new Set<string>(['Python', 'Webscraping'])
+    },
   ]
 
   technologyTypes: string[];
