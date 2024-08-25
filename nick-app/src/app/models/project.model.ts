@@ -7,4 +7,5 @@ export interface Project {
     projectType: string;
     description: string;
     link: string;
+    technologies: Set<string>;
 }

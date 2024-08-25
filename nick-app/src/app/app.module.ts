@@ -28,6 +28,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { RoundWithNameWidget } from './widgets/round-with-name/round-with-name.widget';
+import { MatChipsModule } from '@angular/material/chips';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import { RoundWithNameWidget } from './widgets/round-with-name/round-with-name.w
     ReactiveFormsModule,
     MatFormFieldModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatChipsModule
   ],
   bootstrap: [AppComponent]
 })
