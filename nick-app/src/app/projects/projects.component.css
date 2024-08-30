@@ -38,6 +38,10 @@
     flex-direction: column;
 }
 
-.chip-set {
-    margin: 5px
+/* .chip-set {
+    margin: 3px
+} */
+
+.filter {
+    margin: 15px
 }

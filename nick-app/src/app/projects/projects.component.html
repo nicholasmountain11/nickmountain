@@ -1,9 +1,17 @@
-<mat-chip-set selectable multiple class="chip-set">
-    <mat-chip *ngFor="let tech of technologyTypes" (click)="toggleSelection(tech)"
-        [highlighted]="selectedTechTypes.has(tech)">
-        {{ tech }}
-    </mat-chip>
-</mat-chip-set>
+<mat-card class="filter">
+    <mat-card-header>
+        <mat-card-subtitle>Filter Tech Stack</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-chip-set selectable multiple class="chip-set">
+            <mat-chip *ngFor="let tech of technologyTypes" (click)="toggleSelection(tech)"
+                [highlighted]="selectedTechTypes.has(tech)">
+                {{ tech }}
+            </mat-chip>
+        </mat-chip-set>
+    </mat-card-content>
+</mat-card>
+
 
 
 
