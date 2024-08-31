@@ -22,7 +22,7 @@ export class ProjectsComponent {
       technologies: new Set<string>(['Dart', 'Mobile', 'SQL'])
     },
     {
-      name: 'Wii Golf Database',
+      name: 'Wii Golf Score Tracker',
       projectType: 'Personal Project',
       description: "Keeps track of Wii Golf scores. Includes the Wii Golf tab of this website (built with Angular), and a Java Spring Boot REST API to interact with a MySQL database.",
       link: 'https://github.com/nicholasmountain11/wii-golf-api',
