@@ -6,8 +6,13 @@ import { Project } from '../models/project.model';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
+/** 
+ * Class to handle the Projects tab of the website. Shows a list of 
+ * Projects that can be filtered by technology.
+ */
 export class ProjectsComponent {
 
+  /** List of projects to show in projects.component.html */
   public projects: Project[] = [
     {
       name: 'Record App',
@@ -66,9 +71,16 @@ export class ProjectsComponent {
       technologies: new Set<string>(['Python', 'Webscraping'])
     },
   ]
-
+  /** An array containing each individual technology used in the projects property, 
+   * sorted in decreasing order of usage
+   */
   technologyTypes: string[];
+  /** A set of all the technologyTypes that are currently selected by the filter */
   selectedTechTypes: Set<string> = new Set<string>;
+  /** 
+   * A subset of all projects, containing only the projects that contain all 
+   * selectedTechTypes in their technologies property
+   */
   filteredProjects: Project[];
 
   constructor() {
@@ -86,6 +98,12 @@ export class ProjectsComponent {
     this.filteredProjects = this.projects.slice();
   }
 
+  /**
+   * Toggles presence of tech in selectedTechTypes set, and updates 
+   * filteredProjects accordingly.
+   * 
+   * @param tech The name of the tech being toggled
+   */
   toggleSelection(tech: string) {
 
     // returns true if set1 is a subset of set2
@@ -98,14 +116,21 @@ export class ProjectsComponent {
       return true;
     }
 
+    // remove tech from selectedTechTypes if it is there
     if (this.selectedTechTypes.has(tech)) {
       this.selectedTechTypes.delete(tech)
-    } else {
+    }
+    // otherwise add tech to selectedTechTypes
+    else {
       this.selectedTechTypes.add(tech)
     }
+
+    // if selectedTechTypes is empty make filteredProjects contain all projects
     if (this.selectedTechTypes.size == 0) {
       this.filteredProjects = this.projects.slice()
-    } else {
+    }
+    // put Project in filteredProjects only if selectedTechTypes is a subset of Project's technologies
+    else {
       this.filteredProjects = this.projects.filter((project) =>
         isSubset(this.selectedTechTypes, project.technologies)
       )

@@ -1,3 +1,5 @@
+<!-- mat card containing chip for each element in technologyTypes.
+Clicking a chip will add the technology to selectedTechTypes -->
 <mat-card class="filter">
     <mat-card-header>
         <mat-card-subtitle>Filter Tech Stack</mat-card-subtitle>
@@ -14,7 +16,8 @@
 
 
 
-
+<!-- project widget for each element in filteredProjects.
+List will be filtered after selecting/deselecting a chip from the filter -->
 <div class="project-container">
     <div class="project-list">
         <project-widget class="project-widget" [project]="project" *ngFor="let project of filteredProjects" />
