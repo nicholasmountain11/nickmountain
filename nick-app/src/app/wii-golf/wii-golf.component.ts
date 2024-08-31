@@ -11,9 +11,11 @@ import { TopRoundReturnModel } from '../models/top-round-return.model';
 })
 export class WiiGolfComponent {
 
-  players$: Player[] | undefined; // list of all Players in the database
+  /** List of all Players in the database */
+  players$: Player[] | undefined;
 
-  top_rounds$: TopRoundReturnModel[] | undefined; // list of lowest scoring Rounds in the database
+  /** List of lowest scoring Rounds in the database */
+  top_rounds$: TopRoundReturnModel[] | undefined;
 
 
   constructor(private appService: AppService) {

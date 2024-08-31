@@ -12,10 +12,7 @@ import { Project } from '../models/project.model';
  */
 export class ProjectsComponent {
 
-  /**
-   * List of projects to show in projects.component.html
-   * 
-   */
+  /** List of projects to show in projects.component.html */
   public projects: Project[] = [
     {
       name: 'Record App',

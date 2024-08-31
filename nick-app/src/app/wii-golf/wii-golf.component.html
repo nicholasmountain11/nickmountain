@@ -1,11 +1,17 @@
 <mat-tab-group>
+    <!-- Players tab -->
     <mat-tab label="Players">
+        <!-- player-widget for each player in players$ list -->
         <player-widget class="player-widget" [player]="player" *ngFor="let player of players$" />
     </mat-tab>
+    <!-- Add new tab -->
     <mat-tab label="Add New">
+        <!-- Widget to add new Players -->
         <new-player-widget class="new-player-widget" (registerPlayer)="registerPlayer($event)" />
+        <!-- Widget to add new Round -->
         <new-round-widget class="new-round-widget" [players$]=players$ (addRound)="addRound($event)" />
     </mat-tab>
+    <!-- Top Rounds tab -->
     <mat-tab label="Top Rounds">
         <mat-card class="round-list">
             <mat-card-header>
@@ -16,6 +22,7 @@
             <br>
 
             <mat-card-content>
+                <!-- round-widget for each of top 10 rounds in database -->
                 <round-with-name-widget class="round-widget" [round_with_name]="round"
                     *ngFor="let round of top_rounds$" />
             </mat-card-content>
