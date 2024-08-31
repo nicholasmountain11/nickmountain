@@ -11,8 +11,14 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 })
 export class NewPlayerWidget {
 
+    /** 
+     * Event to be passed back to wii-golf component.
+     * Event will trigger POST request to add Player to
+     * the database
+     */
     @Output() registerPlayer = new EventEmitter<Player>();
 
+    /** Form to gather needed info about Player to be created  */
     registerForm = this.fb.group({
         name: ['', Validators.required],
     })
@@ -23,6 +29,11 @@ export class NewPlayerWidget {
         protected snackbar: MatSnackBar
     ) { }
 
+    /** 
+     * Emits registerPlayer event with new Player
+     * built from form input. Clears form fields
+     * and opens snackbar confirmation message
+     */
     onSubmit() {
         this.registerPlayer.emit({
             name: this.registerForm.value.name!,

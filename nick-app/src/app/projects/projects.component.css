@@ -3,9 +3,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    /* this will add space between each project-widget */
     padding: 10px;
-    /* this will add space around the edges of the container */
     align-items: flex-start;
 }
 
@@ -38,6 +36,6 @@
     flex-direction: column;
 }
 
-.chip-set {
-    margin: 5px
+.filter {
+    margin: 15px
 }

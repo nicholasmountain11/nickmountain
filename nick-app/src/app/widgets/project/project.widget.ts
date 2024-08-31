@@ -8,10 +8,8 @@ import { Project } from "../../models/project.model";
 })
 export class ProjectWidget {
 
-  /** Inputs and outputs go here */
-
+  /** Project object to display information about */
   @Input() project!: Project;
 
-  /** Constructor */
   constructor() { }
 }
