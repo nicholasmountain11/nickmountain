@@ -10,7 +10,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { ClassesComponent } from './classes/classes.component';
 import { MatCardModule } from '@angular/material/card';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -37,7 +36,6 @@ import { MatChipsModule } from '@angular/material/chips';
     HomeComponent,
     AboutMeComponent,
     ProjectsComponent,
-    ClassesComponent,
     ProjectWidget,
     WorkExperienceComponent,
     WiiGolfComponent,
