@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'about-me', component: AboutMeComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'work-experience', component: WorkExperienceComponent },
-  { path: 'wii-golf', component: WiiGolfComponent }
+  // { path: 'wii-golf', component: WiiGolfComponent }
 ];
 
 @NgModule({
